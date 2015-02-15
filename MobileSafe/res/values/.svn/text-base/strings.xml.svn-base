@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">安全卫士</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="server_url">http://222.182.111.230/android/newapk.json</string>
+	<string name="home_funList">功能列表</string>
+</resources>

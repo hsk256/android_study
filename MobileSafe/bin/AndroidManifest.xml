@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.hsk.mobilesafe"
+    android:versionCode="1"
+    android:versionName="1.0"
+    >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="19" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+	<instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.hsk.mobilesafe" />
+     <uses-permission android:name="android.permission.CALL_PHONE"/>
+     <uses-permission android:name="android.permission.CALL_PHONE"/>
+     <uses-permission android:name="android.permission.READ_SMS"/>
+     <uses-permission android:name="android.permission.WRITE_SMS"/>
+     <uses-permission android:name="android.permission.READ_CALL_LOG"/>
+     <uses-permission android:name="android.permission.WRITE_CALL_LOG"/>
+     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+     <uses-permission android:name="android.permission.GET_TASKS"/>
+     <uses-permission android:name="android.permission.CLEAR_APP_CACHE"/>
+     <uses-permission android:name="android.permission.GET_PACKAGE_SIZE"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/apppic"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <uses-library android:name="android.test.runner" />
+        <activity
+            android:name=".SplashActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+             <intent-filter>  
+       				 <data android:scheme="aone" android:host="AccountManageActivity" />  
+   			 </intent-filter> 
+        </activity>
+        <activity 
+            android:name="com.hsk.mobilesafe.HomeActivity">
+            
+        </activity>
+        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".LostFindActivity"></activity>
+        <activity android:name=".Setup1Activity"></activity>
+        <activity android:name=".Setup2Activity"></activity>
+        <activity android:name=".Setup3Activity"></activity>
+        <activity android:name=".Setup4Activity"></activity>
+        <activity android:name=".SelectContactActivity"></activity>
+        <activity android:name=".AtoolsActivity"></activity>
+        <activity android:name=".NumberAddressQueryActivity"></activity>
+        <activity android:name=".CallSmsSafeActivity"></activity>
+        <activity android:name=".AppManager" ></activity>
+        <activity android:name="com.hsk.mobilesafe.TaskManagerActivity"></activity>
+        <activity android:name=".TaskSettingActivity"></activity>
+        <activity android:name="com.hsk.mobilesafe.EnterPwdActivity"
+             android:launchMode="singleInstance"
+            android:excludeFromRecents="true"></activity>
+        <activity android:name=".AntiVirusActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity android:name=".CleanCacheActivity"></activity>
+        <service android:name="com.hsk.mobilesafe.service.GPSService"></service>
+        <service android:name="com.hsk.mobilesafe.service.AddressService"></service>
+        <service android:name="com.hsk.mobilesafe.service.CallSmsSafeService"></service>
+        <service android:name="com.hsk.mobilesafe.service.AutoCleanService"></service>
+        <service android:name="com.hsk.mobilesafe.service.UpdateWidgetService"></service>
+        <service android:name="com.hsk.mobilesafe.service.WatchDogService"></service>
+         <receiver android:name="com.hsk.mobilesafe.receiver.BootCompleteReceiver" >
+            <intent-filter >
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.hsk.mobilesafe.receiver.SMSReceiver">
+            <intent-filter android:priority="1000" >
+                <action android:name="android.provider.Telephony.SMS_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+        
+        <receiver android:name="com.hsk.mobilesafe.receiver.MyWidget" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/process_widget_provider" />
+        </receiver>
+         <receiver android:name="com.hsk.mobilesafe.receiver.KillAll">
+            <intent-filter >
+                <action android:name="com.hsk.mobilesafe.killall"/>
+            </intent-filter>
+        </receiver>
+        
+        
+    </application>
+
+</manifest>

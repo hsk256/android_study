@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/mobilesafe-hsk/!svn/ver/1/src/com/hsk/mobilesafe/service
+END
+AddressService.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/mobilesafe-hsk/!svn/ver/1/src/com/hsk/mobilesafe/service/AddressService.java
+END
+GPSService.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/mobilesafe-hsk/!svn/ver/1/src/com/hsk/mobilesafe/service/GPSService.java
+END
+CallSmsSafeService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/mobilesafe-hsk/!svn/ver/1/src/com/hsk/mobilesafe/service/CallSmsSafeService.java
+END

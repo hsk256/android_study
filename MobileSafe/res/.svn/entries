@@ -1,0 +1,64 @@
+10
+
+dir
+2
+https://hsk:8443/svn/mobilesafe-hsk/res
+https://hsk:8443/svn/mobilesafe-hsk
+
+
+
+2014-12-19T13:08:05.635795Z
+1
+a
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+22a611f1-9c7d-f845-82f9-d92f8d19c552
+
+values
+dir
+
+drawable
+dir
+
+drawable-hdpi
+dir
+
+drawable-xxhdpi
+dir
+
+anim
+dir
+
+values-v11
+dir
+
+drawable-ldpi
+dir
+
+values-v14
+dir
+
+drawable-mdpi
+dir
+
+raw
+dir
+
+drawable-xhdpi
+dir
+
+layout
+dir
+

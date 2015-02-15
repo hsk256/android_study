@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+   
+	
+    
+    
+     <item android:state_pressed="true"><shape>
+
+            <!--
+	        	颜色渐变
+	        	startColor:开始颜色
+	        	endColor:结束颜色
+	        	angle:渐变方向 
+
+
+            -->
+            <gradient android:angle="270" android:endColor="#FFFFFF" android:startColor="#ff8c00" />
+
+            <!--
+	        	按钮边缘
+	        	width:边缘宽
+	        	color:边缘颜色
+
+
+            -->
+            <stroke android:width="2dp" android:color="#dcdcdc" />
+
+            <!--
+	        	按钮四个圆角
+	        	radius:半径
+
+
+            -->
+            <corners android:bottomLeftRadius="15px" android:bottomRightRadius="15px" android:topLeftRadius="15px" android:topRightRadius="15px" />
+
+            <!-- 按钮文字和边缘距离(内边距) -->
+            <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
+        </shape></item>
+        
+     <item android:state_focused="true">
+        <shape>
+            <gradient android:angle="270" android:endColor="#ffc2b7" android:startColor="#ffc2b7" />
+
+            <stroke android:width="2dp" android:color="#dcdcdc" />
+
+            <corners android:bottomLeftRadius="15px" android:bottomRightRadius="15px" android:topLeftRadius="15px" android:topRightRadius="15px" />
+
+            <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp" />
+        </shape>
+        
+     </item>
+     
+      <item>
+        <shape>
+            <gradient 
+                android:angle="270"
+                android:startColor="#ff9d77"
+                android:endColor="#ff9d77"/>
+            <stroke 
+                android:width="2dp"
+                android:color="#fad3cf"/>
+            <corners 
+                android:bottomLeftRadius="15px"
+                android:bottomRightRadius="15px"
+                android:topLeftRadius="15px"
+                android:topRightRadius="15px"/>
+            <padding 
+                android:top="10dp"
+                android:bottom="10dp"
+                android:left="10dp"
+                android:right="10dp"/>
+        </shape>
+        
+    </item>
+</selector>

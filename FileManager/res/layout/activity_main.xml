@@ -1,0 +1,29 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+	<!-- 用于显示当前路径 -->
+    <TextView
+        android:id="@+id/mPath"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:singleLine="true" />
+    <!-- 用于显示当前目录的内容 -->
+
+	<ListView
+	    android:id="@+id/android:list"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"
+	    android:layout_below="@+id/mPath"
+	    android:cacheColorHint="#00000000"
+	    android:divider="@drawable/line" >
+</ListView>
+	<GridView 
+	    android:id="@+id/file_gridview_toolbar"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentBottom="true"></GridView>
+</RelativeLayout>

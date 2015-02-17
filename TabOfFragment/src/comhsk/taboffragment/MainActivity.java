@@ -1,11 +1,17 @@
 package comhsk.taboffragment;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
@@ -17,6 +23,10 @@ import comhsk.taboffragment.fragment.SettingFragment;
 import comhsk.taboffragment.fragment.WeixinFragment;
 
 public class MainActivity extends FragmentActivity implements OnClickListener{
+	private ViewPager mViewPager;
+	private FragmentPagerAdapter mAdapter;
+	private List<Fragment> mFragments;
+	
 	private LinearLayout mTabWeixin;
 	private LinearLayout mTabFrd;
 	private LinearLayout mTabAddress;
@@ -37,7 +47,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		setContentView(R.layout.activity_main);
 		initView();
 		initEvent();
-		setSelect(0);
+		setSelect(1);
 	}
 	
 	public void initView() {
@@ -50,6 +60,51 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mImgFrd = (ImageButton) findViewById(R.id.id_tab_frd_img);
 		mImgSettings = (ImageButton) findViewById(R.id.id_tab_settings_img);
 		mImgWeixin = (ImageButton) findViewById(R.id.id_tab_weixin_img);
+		
+		mViewPager = (ViewPager) findViewById(R.id.id_content);
+		mFragments = new ArrayList<Fragment>();
+		Fragment mTab01 = new WeixinFragment();
+		Fragment mTab02 = new FrdFragment();
+		Fragment mTab03 = new AddressFragment();
+		Fragment mTab04 = new SettingFragment();
+		
+		mFragments.add(mTab01);
+		mFragments.add(mTab02);
+		mFragments.add(mTab03);
+		mFragments.add(mTab04);
+		mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+			
+			@Override
+			public int getCount() {
+				
+				return mFragments.size();
+			}
+			
+			@Override
+			public Fragment getItem(int arg0) {
+				
+				return mFragments.get(arg0);
+			}
+		};
+		mViewPager.setAdapter(mAdapter);
+		mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+			
+			@Override
+			public void onPageSelected(int arg0) {
+				int mCurrentItem = mViewPager.getCurrentItem();
+				setTab(mCurrentItem);
+			}
+			
+			@Override
+			public void onPageScrolled(int arg0, float arg1, int arg2) {
+				
+			}
+			
+			@Override
+			public void onPageScrollStateChanged(int arg0) {
+				
+			}
+		});
 	}
 	
 	public void initEvent() {
@@ -59,6 +114,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		mTabSetting.setOnClickListener(this);
 	}
 	
+/*	
 	public void setSelect(int i) {
 		FragmentManager fm = getSupportFragmentManager();
 		FragmentTransaction transaction = fm.beginTransaction();
@@ -119,6 +175,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 		transaction.commit();
 	}
 	
+
 	public void hideFragment(FragmentTransaction transtion) {
 		if(mTab01!=null) {
 			transtion.hide(mTab01);
@@ -136,9 +193,43 @@ public class MainActivity extends FragmentActivity implements OnClickListener{
 			transtion.hide(mTab04);
 		}
 	}
+	*/
+	public void setTab(int i) {
+		resetImgs();
+		
+		switch (i)
+		{
+		case 0:
+			mImgWeixin.setImageResource(R.drawable.tab_weixin_pressed);
+			break;
+		case 1:
+			
+			mImgFrd.setImageResource(R.drawable.tab_find_frd_pressed);
+			break;
+		case 2:
+			
+			mImgAddress.setImageResource(R.drawable.tab_address_pressed);
+			break;
+		case 3:
+			
+			mImgSettings.setImageResource(R.drawable.tab_settings_pressed);
+			break;
+
+		default:
+			break;
+		}
+
+	}
+	
+	public void setSelect(int i) {
+		
+		setTab(i);
+		mViewPager.setCurrentItem(i);
+	}
+	
 	@Override
 	public void onClick(View v) {
-		resetImgs();
+		//resetImgs();
 		switch (v.getId())
 		{
 		case R.id.id_tab_weixin:

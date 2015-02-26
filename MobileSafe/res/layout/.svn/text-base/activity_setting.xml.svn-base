@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:hsk="http://schemas.android.com/apk/res/com.hsk.mobilesafe"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	 <TextView
+        android:id="@+id/textView1"
+        android:layout_width="fill_parent"
+        android:layout_height="55dip"
+        android:background="#8866ff00"
+        android:gravity="center"
+        android:text="设置中心"
+        android:textColor="#000000"
+        android:textSize="22sp"/>
+	 <com.hsk.mobilesafe.ui.SettingItemView
+	     hsk:my_title="设置自动更新"
+	     hsk:desc_on="设置自动更新已经开启"
+	     hsk:desc_off = "设置自动更新已经关闭"
+	     android:id="@+id/siv_update"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content"
+	     >
+	 
+	 </com.hsk.mobilesafe.ui.SettingItemView>
+	 <com.hsk.mobilesafe.ui.SettingItemView 
+	     hsk:my_title="设置显示号码归属地"
+	     hsk:desc_on="设置显示号码归属地已开启"
+	     hsk:desc_off="设置显示号码归属地已关闭"
+	     android:id="@+id/siv_show_address"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content">
+	     
+	 </com.hsk.mobilesafe.ui.SettingItemView>
+	 <com.hsk.mobilesafe.ui.SettingClickView
+	    android:id="@+id/scv_changebg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+	 </com.hsk.mobilesafe.ui.SettingClickView>
+	 
+	  <com.hsk.mobilesafe.ui.SettingItemView 
+	     hsk:my_title="设置黑名单拦截是否开启"
+	     hsk:desc_on="黑名单拦截已开启"
+	     hsk:desc_off="黑名单拦截已关闭"
+	     android:id="@+id/siv_callsms_safe"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content">
+	     
+	 </com.hsk.mobilesafe.ui.SettingItemView>
+	 
+	  <com.hsk.mobilesafe.ui.SettingItemView 
+	     hsk:my_title="设置程序锁"
+	     hsk:desc_on="程序锁功能已开启"
+	     hsk:desc_off="程序锁功能已关闭"
+	     android:id="@+id/siv_watchdog"
+	     android:layout_width="wrap_content"
+	     android:layout_height="wrap_content">
+	     
+	 </com.hsk.mobilesafe.ui.SettingItemView>
+</LinearLayout>

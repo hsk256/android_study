@@ -1,0 +1,7 @@
+ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc\tTorg.eclipse.jdt.ui.presentation\tTorg.eclipse.compare.contentmergeviewer.TextMergeViewer
+ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jdt.ui.editors.textfont
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.editors.textfont=1|Courier New|18.0|0|COCOA|1|CourierNewPSMT;
+org.eclipse.jface.textfont=1|Courier New|18.0|0|COCOA|1|CourierNewPSMT;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\n<org.eclipse.ui.commands/>
+org.eclipse.ui.workbench.texteditor.blockSelectionModeFont=1|Courier New|16.0|0|COCOA|1|CourierNewPSMT;

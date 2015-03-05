@@ -1,0 +1,45 @@
+package com.example.handler;
+
+import android.app.Activity;
+import android.content.DialogInterface.OnClickListener;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.widget.Button;
+
+public class MainActivity extends Activity {
+	private Button  start;
+	private Button end;
+	private Handler myHandler;
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		start = (Button)findViewById(R.id.start);
+		end = (Button)findViewById(R.id.end);
+		
+	}
+	
+	public class MyThread implements Runnable {
+
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			Message message = Message.obtain();
+			message.obj = "hsk";
+			myHandler.sendMessage(message);
+		}
+		
+	}
+	//创建handler对象
+	Handler handler = new Handler();
+	Runnable updateThread = new Runnable() {
+		
+		@Override
+		public void run() {
+			// TODO Auto-generated method stub
+			System.out.println("update thread");
+			handler.postDelayed(updateThread, 3000);
+		}
+	};
+}

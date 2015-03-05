@@ -1,0 +1,35 @@
+package com.hsk.smstest;
+
+import android.app.Activity;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.SystemClock;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		while (true) {
+
+			// 每隔十秒钟 像系统数据库中写入一条短信
+			new Thread(new Runnable() {
+
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					SystemClock.sleep(10 * 1000);
+					Uri uri = Uri.parse("content://sms/"); // 操作sms的uri
+					ContentValues values = new ContentValues();
+					values.put("address", 95555);
+					values.put("type", 1); // 1 代表接收 2代表发送
+					values.put("body", "您收到一条短信");
+					getContentResolver().insert(uri, values);
+				}
+			}).start();
+
+		}
+	}
+}
